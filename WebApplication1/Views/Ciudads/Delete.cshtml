@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.Ciudad
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Delete</h2>
+
+<h3>¿Estas seguro de eliminar?</h3>
+<div>
+    <h4>Ciudad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CiudadName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CiudadName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CiudadDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CiudadDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar", "Index")
+        </div>
+    }
+</div>
